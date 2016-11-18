@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "./node_modules/.bin/gulp scripts:watch",
     "nodemon": "./node_modules/.bin/nodemon --watch build",
-    "live-server": "cd ./public && live-server --port=6060"
+    "live-server": "cd ./public && ../node_modules/.bin/live-server --port=6060"
   },
   "author": "",
   "license": "ISC",
