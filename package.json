@@ -5,8 +5,8 @@
   "main": "./build/example0.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "C:/Users/pp_RiekR/Desktop/rx-starter/node_modules/.bin/gulp scripts:watch",
-    "nodemon": "C:/Users/pp_RiekR/Desktop/rx-starter/node_modules/.bin/nodemon --watch build",
+    "build": "./node_modules/.bin/gulp scripts:watch",
+    "nodemon": "./node_modules/.bin/nodemon --watch build",
     "live-server": "cd ./public && live-server --port=6060"
   },
   "author": "",
