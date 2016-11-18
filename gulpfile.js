@@ -1,6 +1,6 @@
 'use strict'
 
-const 
+const
   gulp       = require('gulp'),
   $          = require('gulp-load-plugins')(),
   source     = require('vinyl-source-stream'),
@@ -18,9 +18,9 @@ gulp.task('scripts:server', () => {
 })
 
 gulp.task('watch:scripts:server', gulp.series(
-  () => gulp.watch('./src-server/**/*.js'),
-  gulp.series('scripts:server')
-))
+	'scripts:server',
+	() => gulp.watch('./src-server/**/*.js', gulp.series('scripts:server'))
+));
 
 gulp.task('watch:scripts:client', () => {
   const files = fs.readdirSync('./src-client')
@@ -37,7 +37,7 @@ gulp.task('watch:scripts:client', () => {
 })
 
 gulp.task('watch:scripts', gulp.parallel(
-  'watch:scripts:client', 
+  'watch:scripts:client',
   'watch:scripts:server'
 ))
 
@@ -52,7 +52,7 @@ const initBundlerWatch = file => {
   const
     watcher = watchify(bundler),
     filename = path.basename(file),
-    
+
     bundle = () => {
       return bundler
         .bundle()
