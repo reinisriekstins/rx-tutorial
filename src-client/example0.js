@@ -21,10 +21,8 @@ const getItems = title => {
  *---------------------------------*/
 
 Rx.Observable.fromEvent($title, 'keyup')
-.map(e => {
-  $results.empty()
-  return e.target.value
-})
+.do(() => $results.empty())
+.map(e => e.target.value)
 .distinctUntilChanged()
 .debounceTime(300)
 .switchMap(getItems)
